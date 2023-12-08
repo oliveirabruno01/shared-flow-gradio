@@ -40,7 +40,7 @@ def ai_response(input_text, shared_text, temperature):
          "content": str({"shared_context": shared_text, "previous_thought": previous_thought})},
         {"role": "user", "content": input_text}
     ]
-    messages = [*prompts.system_prompt, *in_context_learning, *context]
+    messages = [prompts.system_prompt, *in_context_learning, *context]
     print(messages)
 
     shared_text = ""
